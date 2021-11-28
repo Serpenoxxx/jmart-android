@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 if(object != null){
                                     Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-//                                loggedAccount = gson.fromJson(object.toString(), Account.class);
+//                                  loggedAccount = gson.fromJson(object.toString(), Account.class);
                                     startActivity(intent);
                                 }
                             }catch (JSONException e){

@@ -2,10 +2,10 @@ package BenedictoMatthewJmartFA.jmart_android.model;
 
 import java.util.HashMap;
 
-public class Serializable implements Comparable<Serializable>{
-    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
-    public final int id;
-
+public class Serializable{
+    //private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
+    public final int id = -1;
+    /*
     protected Serializable()
     {
         Integer counter = mapCounter.get(getClass());
@@ -36,4 +36,6 @@ public class Serializable implements Comparable<Serializable>{
     {
         return Integer.compare(this.id, other.id);
     }
+    */
+
 }

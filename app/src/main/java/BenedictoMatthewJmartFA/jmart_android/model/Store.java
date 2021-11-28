@@ -7,6 +7,7 @@ public class Store{
     public String name;
     public String address;
     public String phoneNumber;
+    /*
     public static final String REGEX_PHONE = "(^[0-9]{9,12}$)";
     public static final String REGEX_NAME = "(^[A-Z][a-z0-9][\\S\\s]{4,20}$)";
     public double balance;
@@ -37,4 +38,6 @@ public class Store{
         }
         return false;
     }
+    */
+
 }
