@@ -3,9 +3,9 @@ package BenedictoMatthewJmartFA.jmart_android.model;
 import java.util.HashMap;
 
 public class Serializable{
-    //private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
-    public final int id = -1;
-    /*
+    private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
+    public final int id;
+
     protected Serializable()
     {
         Integer counter = mapCounter.get(getClass());
@@ -31,11 +31,11 @@ public class Serializable{
         return other.id == id;
     }
 
-    @Override
+
     public int compareTo(Serializable other)
     {
         return Integer.compare(this.id, other.id);
     }
-    */
+
 
 }
