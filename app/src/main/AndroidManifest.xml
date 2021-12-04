@@ -14,6 +14,9 @@
         android:usesCleartextTraffic="true">
 
         <activity
+            android:name=".Menu"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
