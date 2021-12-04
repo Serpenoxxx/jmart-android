@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Jmartandroid"
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".AboutMeActivity"
+            android:exported="false" />
         <activity
             android:name=".Menu"
             android:exported="false" />
@@ -25,6 +27,8 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true">
+
+            <!-- android:label=aboutme -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

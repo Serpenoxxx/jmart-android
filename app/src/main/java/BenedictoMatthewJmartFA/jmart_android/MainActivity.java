@@ -7,9 +7,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
@@ -56,5 +58,21 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu,menu);
         return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()) {
+            case R.id.user:
+                Intent intent = new Intent(this, AboutMeActivity.class);
+                this.startActivity(intent);
+                break;
+//            case R.id.search:
+//                // another startActivity, this is for item with id "menu_item2"
+//                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+        return true;
+
     }
 }
