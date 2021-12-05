@@ -73,6 +73,8 @@ public class ProductsFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 menuItems
         );
+
+
         listView.setAdapter(listViewAdapter);
 
         // Inflate the layout for this fragment

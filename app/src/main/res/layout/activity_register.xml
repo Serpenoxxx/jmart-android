@@ -62,13 +62,13 @@
         android:padding="10dp" />
 
     <Button
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/register"
         android:layout_below="@+id/passwordreg"
-        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/cardview_dark_background"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#E1D7D7"
         android:text="Register"
-        />
+        android:textColor="@color/black" />
     </RelativeLayout>

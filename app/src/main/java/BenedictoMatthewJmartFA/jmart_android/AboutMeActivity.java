@@ -16,7 +16,6 @@ public class AboutMeActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         Account loggedAccount = LoginActivity.loggedAccount();
-
         TextView nameValue = findViewById(R.id.nameValue);
         nameValue.setText(loggedAccount.name);
         TextView emailValue = findViewById(R.id.emailValue);

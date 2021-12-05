@@ -15,9 +15,9 @@
         <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/content_menu.xml" value="0.3625" />
         <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_blank.xml" value="0.1" />
-        <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_filter.xml" value="0.3625" />
+        <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_filter.xml" value="0.33" />
         <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_first.xml" value="0.3625" />
-        <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_products.xml" value="0.33" />
+        <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_products.xml" value="0.2" />
         <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_second.xml" value="0.3625" />
         <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/layout/fragment_third.xml" value="0.20364583333333333" />
         <entry key="..\:/College/Sem3/OOP/JmartAndroid/app/src/main/res/menu/activity_menu.xml" value="0.33" />
@@ -40,7 +40,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.3625" />
+        <option name="scale" value="0.5" />
       </ProjectState>
     </option>
   </component>

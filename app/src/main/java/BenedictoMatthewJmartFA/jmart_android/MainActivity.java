@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //hide item 2
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu,menu);
         return true;
