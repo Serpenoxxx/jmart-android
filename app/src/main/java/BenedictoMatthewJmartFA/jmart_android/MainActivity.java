@@ -55,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //hide item 2
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu,menu);
+        if (LoginActivity.loggedAccount().store == null) {
+            menu.findItem(R.id.add).setVisible(false);
+        }
         return true;
     }
     public boolean onOptionsItemSelected(MenuItem item){
@@ -66,14 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, AboutMeActivity.class);
                 this.startActivity(intent);
                 break;
-//            case R.id.search:
-//                // another startActivity, this is for item with id "menu_item2"
-//                break;
+//          case R.id.search:
+//              break;
+            case R.id.add:
+                Intent addIntent = new Intent(this, CreateProductActivity.class);
+                this.startActivity(addIntent);
+                break;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
-
         return true;
-
     }
 }

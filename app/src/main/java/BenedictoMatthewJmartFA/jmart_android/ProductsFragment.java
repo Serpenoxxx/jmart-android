@@ -8,7 +8,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.reflect.TypeToken;
+import BenedictoMatthewJmartFA.jmart_android.model.Product;
+import BenedictoMatthewJmartFA.jmart_android.request.RequestFactory;
+
+import org.json.JSONArray;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,10 +76,8 @@ public class ProductsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_products, container, false);
-        String[] menuItems ={
-                "Abcefghijkli",
-                                "re",
-                                "mi"};
+        String[] menuItems = {"Chitato Chocolatos","Rexus Ubuntu","Philips GTX","Windows Premium",
+                "Sharp Sharp","Redmi Rexus","LG lG","Macintosh LG","Cimory Paseo","Sades Monde","Nokia Paseo","Pilot Tupperware","LG Philips"};
 
         ListView listView = (ListView) view.findViewById(R.id.ListProduct);
 

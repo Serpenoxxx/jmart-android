@@ -67,6 +67,7 @@
         tools:ignore="MissingConstraints" />
 
     <ListView
+        app:cardCornerRadius="16dp"
         android:id="@+id/ListProduct"
         android:layout_width="395dp"
         android:layout_height="634dp"
