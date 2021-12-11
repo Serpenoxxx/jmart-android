@@ -5,6 +5,7 @@ import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,8 @@ import org.json.JSONObject;
 
 import BenedictoMatthewJmartFA.jmart_android.model.Account;
 import BenedictoMatthewJmartFA.jmart_android.request.CreateStoreRequest;
+import BenedictoMatthewJmartFA.jmart_android.request.RegisterRequest;
+import BenedictoMatthewJmartFA.jmart_android.request.TopUpRequest;
 
 public class AboutMeActivity extends AppCompatActivity {
 
@@ -45,6 +48,7 @@ public class AboutMeActivity extends AppCompatActivity {
 
         Button registerStoreButton = findViewById(R.id.RegisterStoreButton);
         Button cancelButton = findViewById(R.id.CancelButton);
+        Button topUpButton = findViewById(R.id.TopUpButton);
 
         if ((LoginActivity.loggedAccount().store == null)) {
             registerStoreButton.setVisibility(View.VISIBLE);
@@ -58,6 +62,39 @@ public class AboutMeActivity extends AppCompatActivity {
             TextView storePhoneNumber = findViewById(R.id.storePhoneNumberView);
             storePhoneNumber.setText(LoginActivity.loggedAccount().store.phoneNumber);
         }
+
+        topUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText storeBalance = findViewById(R.id.TopUp);
+                Response.Listener<String> listener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONObject object = new JSONObject(response);
+                            if(object != null){
+                                Toast.makeText(AboutMeActivity.this, "Top Up Success", Toast.LENGTH_SHORT).show();
+                            }
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                            Toast.makeText(AboutMeActivity.this, "Top Up Success", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                };
+                Response.ErrorListener errorListener = new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError error){
+                        Toast.makeText(AboutMeActivity.this, "Listener Error", Toast.LENGTH_LONG).show();
+
+                    }
+                };
+                TopUpRequest newTopUpRequest = new TopUpRequest(LoginActivity.loggedAccount().id, storeBalance.getText().toString(), listener, errorListener);
+                RequestQueue queue = Volley.newRequestQueue(AboutMeActivity.this);
+                queue.add(newTopUpRequest);
+
+            }
+        });
+
         cancelButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -70,6 +107,7 @@ public class AboutMeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 registerStoreButton.setVisibility(View.GONE);
                 registerCard.setVisibility(View.VISIBLE);
+
                 EditText storeName = findViewById(R.id.RegisterName);
                 EditText storeAddress = findViewById(R.id.RegisterAddress);
                 EditText storePhoneNumber = findViewById(R.id.RegisterPhone);
@@ -86,7 +124,6 @@ public class AboutMeActivity extends AppCompatActivity {
                                         JSONObject jObject = new JSONObject(response);
                                         if (jObject != null) {
                                             Toast.makeText(AboutMeActivity.this, "Success!", Toast.LENGTH_LONG).show();
-
                                         } else {
                                             Toast.makeText(AboutMeActivity.this, "Failed!", Toast.LENGTH_LONG).show();
                                         }
@@ -114,6 +151,5 @@ public class AboutMeActivity extends AppCompatActivity {
                 });
             }
         });
-
         }
 }

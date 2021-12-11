@@ -18,19 +18,18 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filterNameLabel"
-            app:layout_constraintVertical_bias="0.0" />
+            android:background="@drawable/squared_border"
+            app:layout_constraintEnd_toEndOf="@+id/filterNameLabel"
+            app:layout_constraintStart_toStartOf="@+id/filterNameLabel"
+            app:layout_constraintTop_toBottomOf="@+id/filterNameLabel" />
 
         <TextView
             android:id="@+id/filterNameLabel"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Nama"
+            android:text=" Name"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +44,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Highest Price"
+            android:text=" Highest Price"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +59,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:text="Lowest Price"
+            android:text=" Lowest Price"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -76,11 +75,12 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="numberSigned"
+            android:minHeight="48dp"
             android:textColor="@color/black"
+            android:background="@drawable/squared_border"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.119"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/filterLowestLabel"
+            app:layout_constraintStart_toStartOf="@+id/filterLowestLabel"
             app:layout_constraintTop_toBottomOf="@+id/filterLowestLabel"
             app:layout_constraintVertical_bias="0.001" />
 
@@ -88,14 +88,14 @@
             android:id="@+id/filterHighest"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:ems="10"
             android:inputType="numberSigned"
+            android:minHeight="48dp"
             android:textColor="@color/black"
+            android:background="@drawable/squared_border"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.876"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/filterHighestLabel"
+            app:layout_constraintStart_toStartOf="@+id/filterHighestLabel"
             app:layout_constraintTop_toBottomOf="@+id/filterHighestLabel"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -103,57 +103,46 @@
             android:id="@+id/productCondition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="39dp"
             android:text="Product Condition"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.106"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filterLowest"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="@+id/filterLowestLabel"
+            app:layout_constraintTop_toBottomOf="@+id/filterLowest" />
 
         <TextView
             android:id="@+id/productCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="51dp"
             android:text="Product Category"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.104"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/productCondition"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toEndOf="@+id/productCondition"
+            app:layout_constraintStart_toStartOf="@+id/productCondition"
+            app:layout_constraintTop_toBottomOf="@+id/productCondition" />
 
         <CheckBox
             android:id="@+id/checkNew"
             android:layout_width="84dp"
-            android:layout_height="21dp"
+            android:layout_height="48dp"
             android:layout_marginTop="25dp"
             android:text="New"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.648"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filterHighest"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/filterHighest" />
 
         <CheckBox
             android:id="@+id/checkUsed"
             android:layout_width="84dp"
-            android:layout_height="21dp"
+            android:layout_height="48dp"
             android:layout_marginTop="25dp"
             android:text="Used"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.905"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/filterHighest"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/filterHighest" />
 
         <Spinner
             android:id="@+id/spinner"
@@ -161,37 +150,39 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
             android:entries="@array/productCategory"
+            android:minHeight="48dp"
             android:spinnerMode="dropdown"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.876"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkUsed"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toEndOf="@+id/checkUsed"
+            app:layout_constraintStart_toStartOf="@+id/checkNew"
+            app:layout_constraintTop_toBottomOf="@+id/checkUsed" />
 
         <Button
             android:id="@+id/apply"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="32dp"
             android:backgroundTint="#E1D7D7"
             android:text="APPLY"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/clear"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/clear"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="32dp"
             android:backgroundTint="#E1D7D7"
             android:text="CLEAR"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/apply" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

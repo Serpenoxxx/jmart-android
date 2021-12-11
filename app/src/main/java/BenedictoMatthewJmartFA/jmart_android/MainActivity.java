@@ -17,11 +17,15 @@ import android.widget.TextView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import BenedictoMatthewJmartFA.jmart_android.model.Account;
+
 public class MainActivity extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Account loggedAccount = LoginActivity.loggedAccount();
+        setTitle("Hello "+ loggedAccount.name);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -80,4 +84,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
+
 }

@@ -75,6 +75,7 @@ public class ProductsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_products, container, false);
         String[] menuItems = {"Chitato Chocolatos","Rexus Ubuntu","Philips GTX","Windows Premium",
                 "Sharp Sharp","Redmi Rexus","LG lG","Macintosh LG","Cimory Paseo","Sades Monde","Nokia Paseo","Pilot Tupperware","LG Philips"};
@@ -86,7 +87,6 @@ public class ProductsFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 menuItems
         );
-
 
         listView.setAdapter(listViewAdapter);
 

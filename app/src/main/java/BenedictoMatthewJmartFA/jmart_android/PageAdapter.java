@@ -15,6 +15,7 @@ public class PageAdapter extends FragmentStateAdapter {
         return new FilterFragment();
     }
 
+
     @Override
     public int getItemCount() {
         return 2;

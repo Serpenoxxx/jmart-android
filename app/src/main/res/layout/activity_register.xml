@@ -1,74 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".LoginActivity"
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/signin"
-        android:text="Sign in"
-        android:textColor="@color/white"
-        android:textSize="35dp"
-        android:layout_margin="50dp"
-        android:gravity="center"
-        />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="#0099ff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/wave2"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
 
 
     <EditText
         android:id="@+id/namereg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/signin"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/border"
+        android:drawableStart="@drawable/ic_baseline_blue_person_24"
+        android:drawablePadding="16dp"
         android:hint="name"
         android:inputType="text"
         android:minHeight="48dp"
-        android:padding="10dp" />
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wave2" />
 
     <EditText
         android:id="@+id/emailreg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/namereg"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/border"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="16dp"
         android:hint="email"
         android:inputType="text"
         android:minHeight="48dp"
-        android:padding="10dp" />
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/namereg"
+        app:layout_constraintStart_toStartOf="@+id/namereg"
+        app:layout_constraintTop_toBottomOf="@+id/namereg" />
 
     <EditText
-
         android:id="@+id/passwordreg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/emailreg"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/border"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="16dp"
         android:hint="password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        android:padding="10dp" />
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/emailreg"
+        app:layout_constraintStart_toStartOf="@+id/emailreg"
+        app:layout_constraintTop_toBottomOf="@+id/emailreg" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/rounded_blue_button"
+        android:text="Register"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/passwordreg"
+        app:layout_constraintStart_toStartOf="@+id/passwordreg"
+        app:layout_constraintTop_toBottomOf="@+id/passwordreg" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordreg"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#E1D7D7"
-        android:text="Register"
-        android:textColor="@color/black" />
-    </RelativeLayout>
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Create Your Account"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Create Your Account!" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -73,53 +73,6 @@ public class FilterFragment extends Fragment {
     public void onViewCreated(View v, @Nullable Bundle savedInstanceState) {
         EditText filterTextName = getView().findViewById(R.id.filterName);
         TextView filterLabelNama = getView().findViewById(R.id.filterNameLabel);
-        filterTextName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    filterLabelNama.setTextColor(getResources().getColor(R.color.purple_500));
-                    filterTextName.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFBB86FC")));
-                    filterLabelNama.setHint("Nama Product");
-                } else {
-                    filterLabelNama.setHint("");
-                    filterLabelNama.setTextColor(getResources().getColor(R.color.gray));
-                    filterTextName.setBackgroundTintList(gray);
-                }
-            }
-        });
 
-        EditText filterTextLowest = getView().findViewById(R.id.filterLowest);
-        TextView filterLabelLowest = getView().findViewById(R.id.filterLowestLabel);
-        filterTextLowest.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    filterLabelLowest.setTextColor(getResources().getColor(R.color.purple_500));
-                    filterTextLowest.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFBB86FC")));
-                    filterLabelLowest.setHint("Ex: 1000");
-                } else {
-                    filterLabelLowest.setHint("");
-                    filterLabelLowest.setTextColor(getResources().getColor(R.color.gray));
-                    filterTextLowest.setBackgroundTintList(gray);
-                }
-            }
-        });
-
-        EditText filterTextHighest = getView().findViewById(R.id.filterHighest);
-        TextView filterLabelHighest = getView().findViewById(R.id.filterHighestLabel);
-        filterTextHighest.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    filterLabelHighest.setTextColor(getResources().getColor(R.color.colorPrimary));
-                    filterTextHighest.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FFBB86FC")));
-                    filterLabelHighest.setHint("Ex: 1000");
-                } else {
-                    filterLabelHighest.setHint("");
-                    filterLabelHighest.setTextColor(getResources().getColor(R.color.gray));
-                    filterTextHighest.setBackgroundTintList(gray);
-                }
-            }
-        });
     }
 }

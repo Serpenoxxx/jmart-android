@@ -79,11 +79,12 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
                     android:ems="10"
-                    android:hint="Top Up Amount"
+                    android:hint="  Top Up Amount"
                     android:inputType="numberDecimal"
                     android:textAlignment="textStart"
                     android:textColorHint="#B3B3B3"
                     android:textSize="13dp"
+                    android:background="@drawable/squared_border"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/AboutBalance" />
 
@@ -93,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="24dp"
-                    android:backgroundTint="#E1D7D7"
+                    android:background="@drawable/rounded_blue_button"
                     android:text="Top Up"
                     android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"

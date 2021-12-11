@@ -37,5 +37,4 @@ public class Serializable{
         return Integer.compare(this.id, other.id);
     }
 
-
 }
