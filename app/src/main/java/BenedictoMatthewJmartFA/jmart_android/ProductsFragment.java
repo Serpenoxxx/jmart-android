@@ -1,5 +1,8 @@
 package BenedictoMatthewJmartFA.jmart_android;
 
+import static BenedictoMatthewJmartFA.jmart_android.FilterFragment.productName;
+
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,23 +10,29 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import BenedictoMatthewJmartFA.jmart_android.model.Product;
-import BenedictoMatthewJmartFA.jmart_android.request.RequestFactory;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
+import BenedictoMatthewJmartFA.jmart_android.model.Product;
+import BenedictoMatthewJmartFA.jmart_android.request.RequestFactory;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,28 +79,55 @@ public class ProductsFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_products, container, false);
+        Button next = v.findViewById(R.id.Next);
+        Button prev = v.findViewById(R.id.Prev);
+        Button go = v.findViewById(R.id.Go);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, productName);ListView listView = (ListView) v.findViewById(R.id.ListProduct);
+        listView.setAdapter(adapter);
 
-        View view = inflater.inflate(R.layout.fragment_products, container, false);
-        String[] menuItems = {"Chitato Chocolatos","Rexus Ubuntu","Philips GTX","Windows Premium",
-                "Sharp Sharp","Redmi Rexus","LG lG","Macintosh LG","Cimory Paseo","Sades Monde","Nokia Paseo","Pilot Tupperware","LG Philips"};
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ProductDetailActivity.class);
+                intent.putExtra("Position", position);
+                startActivity(intent);
+            }
+        });
 
-        ListView listView = (ListView) view.findViewById(R.id.ListProduct);
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                menuItems
-        );
+            }
+        });
 
-        listView.setAdapter(listViewAdapter);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        // Inflate the layout for this fragment
-        return view;
+            }
+        });
+
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        return v;
     }
 
+
+
 }
+
+
+

@@ -48,8 +48,7 @@ public class CreateProductActivity extends AppCompatActivity {
         productCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(CreateProductActivity.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

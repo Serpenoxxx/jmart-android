@@ -40,16 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (position){
                     case 0:{
-                        //can use set icon
                         tab.setText("Products");
+                        tab.setIcon(R.drawable.ic_baseline_library_books_24);
                         break;
                     }
                     case 1:{
-                        //color too
                         tab.setText("Filter");
+                        tab.setIcon(R.drawable.ic_baseline_filter_list_24);
                         break;
                     }
-
                 }
             }
         }

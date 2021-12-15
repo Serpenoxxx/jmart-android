@@ -22,7 +22,6 @@
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wave" />
@@ -71,8 +70,8 @@
         android:layout_below="@+id/login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:backgroundTint="@color/white"
-        android:text="Dont have account?\nRegister now"
+        android:backgroundTintMode="screen"
+        android:text="Dont have an account?\nRegister now"
         android:textColor="#0099FF"
         android:textSize="12dp"
         app:layout_constraintEnd_toEndOf="@+id/login"
@@ -85,6 +84,7 @@
         android:layout_height="100dp"
         android:background="#0099ff"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

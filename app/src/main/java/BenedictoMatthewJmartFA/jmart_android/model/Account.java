@@ -22,7 +22,6 @@ public class Account extends Serializable
         this.balance = balance;
     }
 
-
     public boolean read(String content)
     {
         return false;
@@ -46,6 +45,5 @@ public class Account extends Serializable
         }
         return false;
     }
-
 
 }

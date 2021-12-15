@@ -78,13 +78,14 @@
                     android:layout_height="48dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="24dp"
+                    android:background="@drawable/squared_border"
                     android:ems="10"
-                    android:hint="  Top Up Amount"
+                    android:hint=" Top Up Amount"
                     android:inputType="numberDecimal"
+                    android:paddingStart="3dp"
                     android:textAlignment="textStart"
                     android:textColorHint="#B3B3B3"
                     android:textSize="13dp"
-                    android:background="@drawable/squared_border"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/AboutBalance" />
 

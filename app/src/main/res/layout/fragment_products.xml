@@ -8,19 +8,19 @@
     tools:context=".ProductsFragment">
 
     <Button
-        android:id="@+id/productButton"
+        android:id="@+id/Next"
         android:layout_width="83dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:backgroundTint="#E1D7D7"
         android:text="NEXT"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/ProductButton"
-        app:layout_constraintStart_toEndOf="@+id/ProductButton"
-        app:layout_constraintTop_toTopOf="@+id/ProductButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/Prev"
+        app:layout_constraintStart_toEndOf="@+id/Prev"
+        app:layout_constraintTop_toTopOf="@+id/Prev" />
 
     <Button
-        android:id="@+id/productButton2"
+        android:id="@+id/Go"
         android:layout_width="83dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
@@ -32,10 +32,10 @@
         app:layout_constraintTop_toTopOf="@+id/IndexNumber" />
 
     <Button
-        android:id="@+id/ProductButton"
+        android:id="@+id/Prev"
         android:layout_width="83dp"
         android:layout_height="48dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="12dp"
         android:backgroundTint="#E1D7D7"
         android:text="PREV"
         android:textColor="#000000"
@@ -50,14 +50,14 @@
         android:layout_marginStart="24dp"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="@+id/productButton"
-        app:layout_constraintStart_toEndOf="@+id/productButton"
-        app:layout_constraintTop_toTopOf="@+id/productButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/Next"
+        app:layout_constraintStart_toEndOf="@+id/Next"
+        app:layout_constraintTop_toTopOf="@+id/Next" />
 
     <ListView
         android:id="@+id/ListProduct"
         android:layout_width="395dp"
-        android:layout_height="626dp"
+        android:layout_height="600dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         app:cardCornerRadius="16dp"

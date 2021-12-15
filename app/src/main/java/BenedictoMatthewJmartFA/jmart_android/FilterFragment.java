@@ -4,15 +4,39 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONArray;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
+import BenedictoMatthewJmartFA.jmart_android.model.Product;
+import BenedictoMatthewJmartFA.jmart_android.model.ProductCategory;
+import BenedictoMatthewJmartFA.jmart_android.request.RequestFactory;
 
 
 /**
@@ -21,6 +45,9 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class FilterFragment extends Fragment {
+    private static final Gson gson = new Gson();
+    public static final ArrayList<String> productName = new ArrayList<>();
+    public static ArrayList<Product> products = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -66,13 +93,68 @@ public class FilterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_filter, container, false);
-    }
 
-    @Override
-    public void onViewCreated(View v, @Nullable Bundle savedInstanceState) {
-        EditText filterTextName = getView().findViewById(R.id.filterName);
-        TextView filterLabelNama = getView().findViewById(R.id.filterNameLabel);
+        View v = inflater.inflate(R.layout.fragment_filter, container, false);
 
+        EditText search = v.findViewById(R.id.filterName);
+        EditText minPrice = v.findViewById(R.id.filterLowest);
+        EditText maxPrice = v.findViewById(R.id.filterHighest);
+        CheckBox checkNew = v.findViewById(R.id.checkNew);
+        Spinner category = v.findViewById(R.id.spinner);
+        Button filter = v.findViewById(R.id.apply);
+        Button clear = v.findViewById(R.id.clear);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search.getText().clear();
+                minPrice.getText().clear();
+                maxPrice.getText().clear();
+
+            }
+        });
+        category.setAdapter(new ArrayAdapter<ProductCategory>(getContext(), android.R.layout.simple_spinner_dropdown_item, ProductCategory.values()));
+
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean used = !checkNew.isChecked();
+                System.out.println(used);
+                Response.Listener<String> listener = new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        System.out.println(response);
+                        try {
+                            JSONArray jArray = new JSONArray(response);
+                            Type type = new TypeToken<ArrayList<Product>>(){}.getType();
+                            products = gson.fromJson(String.valueOf(jArray), type);
+                            System.out.println(jArray);
+                            for (Product prod : products) {
+                                productName.add(prod.name.toString());
+                            }
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                };
+                try {
+                    Response.ErrorListener errorListener = new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Toast.makeText(getActivity(), "Error!", Toast.LENGTH_LONG).show();
+                        }
+                    };
+                    StringRequest request = RequestFactory.getProduct(1,5,loggedAccount().id,search.getText().toString(),
+                            minPrice.getText().toString(), maxPrice.getText().toString(),category.getSelectedItem().toString(),String.valueOf(used),
+                            listener, errorListener);
+                    RequestQueue queue = Volley.newRequestQueue(getActivity());
+                    queue.add(request);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Toast.makeText(getActivity(), "Error!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+        return v;
     }
 }

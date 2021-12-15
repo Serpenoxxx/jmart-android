@@ -5,6 +5,10 @@ import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONArray;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import BenedictoMatthewJmartFA.jmart_android.model.Account;
+import BenedictoMatthewJmartFA.jmart_android.model.Store;
 import BenedictoMatthewJmartFA.jmart_android.request.CreateStoreRequest;
 import BenedictoMatthewJmartFA.jmart_android.request.RegisterRequest;
 import BenedictoMatthewJmartFA.jmart_android.request.TopUpRequest;
@@ -70,22 +75,13 @@ public class AboutMeActivity extends AppCompatActivity {
                 Response.Listener<String> listener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        try{
-                            JSONObject object = new JSONObject(response);
-                            if(object != null){
-                                Toast.makeText(AboutMeActivity.this, "Top Up Success", Toast.LENGTH_SHORT).show();
-                            }
-                        }catch (JSONException e){
-                            e.printStackTrace();
-                            Toast.makeText(AboutMeActivity.this, "Top Up Success", Toast.LENGTH_SHORT).show();
-                        }
+                        Toast.makeText(AboutMeActivity.this, "Top Up Success", Toast.LENGTH_SHORT).show();
                     }
                 };
                 Response.ErrorListener errorListener = new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error){
                         Toast.makeText(AboutMeActivity.this, "Listener Error", Toast.LENGTH_LONG).show();
-
                     }
                 };
                 TopUpRequest newTopUpRequest = new TopUpRequest(LoginActivity.loggedAccount().id, storeBalance.getText().toString(), listener, errorListener);
@@ -122,6 +118,7 @@ public class AboutMeActivity extends AppCompatActivity {
                                 public void onResponse(String response) {
                                     try {
                                         JSONObject jObject = new JSONObject(response);
+
                                         if (jObject != null) {
                                             Toast.makeText(AboutMeActivity.this, "Success!", Toast.LENGTH_LONG).show();
                                         } else {
