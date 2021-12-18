@@ -12,9 +12,7 @@
         android:layout_width="83dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:backgroundTint="#E1D7D7"
         android:text="NEXT"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/Prev"
         app:layout_constraintStart_toEndOf="@+id/Prev"
         app:layout_constraintTop_toTopOf="@+id/Prev" />
@@ -24,9 +22,7 @@
         android:layout_width="83dp"
         android:layout_height="48dp"
         android:layout_marginStart="24dp"
-        android:backgroundTint="#E1D7D7"
         android:text="GO"
-        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="@+id/IndexNumber"
         app:layout_constraintStart_toEndOf="@+id/IndexNumber"
         app:layout_constraintTop_toTopOf="@+id/IndexNumber" />
@@ -36,9 +32,7 @@
         android:layout_width="83dp"
         android:layout_height="48dp"
         android:layout_marginStart="12dp"
-        android:backgroundTint="#E1D7D7"
         android:text="PREV"
-        android:textColor="#000000"
         app:layout_constraintBottom_toTopOf="@+id/ListProduct"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />

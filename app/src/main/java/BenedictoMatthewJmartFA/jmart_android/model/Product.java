@@ -2,6 +2,12 @@ package BenedictoMatthewJmartFA.jmart_android.model;
 
 import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
 
+/**
+ * Contains product details.
+ *
+ * @author Benedicto Matthew W
+ */
+
 public class Product extends Serializable{
     public int accountId;
     public ProductCategory category;

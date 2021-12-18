@@ -13,15 +13,28 @@
         android:theme="@style/Theme.Jmartandroid"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".InvoiceDetail"
+            android:exported="false" />
+        <activity
+            android:name=".InvoiceActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConfirmationActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ProductDetailActivity"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".CreateProductActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AboutMeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

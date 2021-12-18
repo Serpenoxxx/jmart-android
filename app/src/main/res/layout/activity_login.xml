@@ -18,10 +18,12 @@
         android:background="@drawable/border"
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawablePadding="16dp"
+        android:fontFamily="sans-serif"
         android:hint="email"
         android:inputType="text"
         android:minHeight="48dp"
         android:padding="10dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wave" />
@@ -37,10 +39,12 @@
         android:background="@drawable/border"
         android:drawableStart="@drawable/ic_baseline_lock_24"
         android:drawablePadding="16dp"
+        android:fontFamily="sans-serif"
         android:hint="password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:padding="10dp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
@@ -52,7 +56,7 @@
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rounded_blue_button"
         android:text="Login"
@@ -103,12 +107,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="45dp"
-        android:fontFamily="sans-serif-light"
+        android:fontFamily="@font/capriola"
         android:text="Welcome Back!"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Welcome Back!" />
+        tools:text="Welcome to JMart!" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

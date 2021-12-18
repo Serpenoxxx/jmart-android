@@ -5,10 +5,6 @@ import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,9 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import BenedictoMatthewJmartFA.jmart_android.model.Account;
-import BenedictoMatthewJmartFA.jmart_android.model.Store;
 import BenedictoMatthewJmartFA.jmart_android.request.CreateStoreRequest;
-import BenedictoMatthewJmartFA.jmart_android.request.RegisterRequest;
 import BenedictoMatthewJmartFA.jmart_android.request.TopUpRequest;
 
 public class AboutMeActivity extends AppCompatActivity {
@@ -37,12 +31,11 @@ public class AboutMeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_me);
-        getSupportActionBar().hide();
 
         Account loggedAccount = LoginActivity.loggedAccount();
 
         TextView nameValue = findViewById(R.id.NameView);
-        nameValue.setText(loggedAccount.name);
+        nameValue.setText(loggedAccount().name);
         TextView emailValue = findViewById(R.id.EmailView);
         emailValue.setText(loggedAccount.email);
         TextView balanceValue = findViewById(R.id.BalanceView);
@@ -54,11 +47,13 @@ public class AboutMeActivity extends AppCompatActivity {
         Button registerStoreButton = findViewById(R.id.RegisterStoreButton);
         Button cancelButton = findViewById(R.id.CancelButton);
         Button topUpButton = findViewById(R.id.TopUpButton);
+        Button InvoiceButton = findViewById(R.id.InvoiceButton);
 
         if ((LoginActivity.loggedAccount().store == null)) {
             registerStoreButton.setVisibility(View.VISIBLE);
             storeCard.setVisibility(View.GONE);
         } else {
+            registerStoreButton.setVisibility(View.GONE);
             storeCard.setVisibility(View.VISIBLE);
             TextView storeName = findViewById(R.id.storeNameView);
             storeName.setText(LoginActivity.loggedAccount().store.name);
@@ -81,13 +76,11 @@ public class AboutMeActivity extends AppCompatActivity {
                 Response.ErrorListener errorListener = new Response.ErrorListener(){
                     @Override
                     public void onErrorResponse(VolleyError error){
-                        Toast.makeText(AboutMeActivity.this, "Listener Error", Toast.LENGTH_LONG).show();
                     }
                 };
                 TopUpRequest newTopUpRequest = new TopUpRequest(LoginActivity.loggedAccount().id, storeBalance.getText().toString(), listener, errorListener);
                 RequestQueue queue = Volley.newRequestQueue(AboutMeActivity.this);
                 queue.add(newTopUpRequest);
-
             }
         });
 
@@ -148,5 +141,14 @@ public class AboutMeActivity extends AppCompatActivity {
                 });
             }
         });
+
+        InvoiceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AboutMeActivity.this,InvoiceActivity.class);
+                startActivity(intent);
+            }
+        });
+
         }
 }

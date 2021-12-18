@@ -1,5 +1,7 @@
 package BenedictoMatthewJmartFA.jmart_android;
 
+import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -31,7 +33,6 @@ public class CreateProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_product);
-        getSupportActionBar().hide();
 
         EditText productName = findViewById(R.id.createProductName);
         EditText productWeight = findViewById(R.id.createProductWeight);
@@ -58,10 +59,10 @@ public class CreateProductActivity extends AppCompatActivity {
                 conditionUsed = !radioNew.isChecked();
 
                 byte validShipmentPlan = checkShipmentPlan(productShipmentPlans);
-
                 Response.Listener<String> listener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        System.out.println(response);
                         try {
                             JSONObject jObject = new JSONObject(response);
                             if (jObject != null) {
@@ -84,7 +85,7 @@ public class CreateProductActivity extends AppCompatActivity {
                     }
                 };
                 CreateProductRequest createRequest = new CreateProductRequest(
-                        String.valueOf(LoginActivity.loggedAccount().id),
+                        String.valueOf(loggedAccount().id),
                         productName.getText().toString(),
                         productWeight.getText().toString(),
                         String.valueOf(conditionUsed),
@@ -100,17 +101,18 @@ public class CreateProductActivity extends AppCompatActivity {
     }
 
     private byte checkShipmentPlan(Spinner productShipmentPlan) {
-        if (productShipmentPlan.getSelectedItem() == "INSTANT") {
-            return (byte)00000001;
-        } else if (productShipmentPlan.getSelectedItem() == "SAME DAY") {
-            return (byte)00000010;
-        } else if (productShipmentPlan.getSelectedItem() == "NEXT DAY") {
-            return (byte)00000100;
-        } else if (productShipmentPlan.getSelectedItem() == "REGULER") {
-            return (byte)00001000;
-        } else if (productShipmentPlan.getSelectedItem() == "KARGO") {
-            return (byte)00010000;
+        byte bit = 1;
+        if (productShipmentPlan.getSelectedItem().toString().equals("INSTANT")) {
+            bit = (byte)1;
+        } else if (productShipmentPlan.getSelectedItem().toString().equals("SAME DAY")) {
+            bit = (byte)2;
+        } else if (productShipmentPlan.getSelectedItem().toString().equals("NEXT DAY")) {
+            bit = (byte)4;
+        } else if (productShipmentPlan.getSelectedItem().toString().equals("REGULER")) {
+            bit = (byte)8;
+        } else if (productShipmentPlan.getSelectedItem().toString().equals("KARGO")) {
+            bit = (byte)16;
         }
-        return 0;
+        return bit;
     }
 }

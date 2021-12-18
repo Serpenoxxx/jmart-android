@@ -2,7 +2,13 @@ package BenedictoMatthewJmartFA.jmart_android.model;
 
 import java.util.HashMap;
 
-public class Serializable{
+/**
+ * Handles the ids.
+ *
+ * @author Benedicto Matthew W
+ */
+
+public class Serializable {
     private static HashMap<Class<?>, Integer> mapCounter = new HashMap<>();
     public final int id;
 

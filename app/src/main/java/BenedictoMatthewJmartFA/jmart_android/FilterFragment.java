@@ -29,9 +29,11 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
 import BenedictoMatthewJmartFA.jmart_android.model.Product;
@@ -46,8 +48,10 @@ import BenedictoMatthewJmartFA.jmart_android.request.RequestFactory;
  */
 public class FilterFragment extends Fragment {
     private static final Gson gson = new Gson();
-    public static final ArrayList<String> productName = new ArrayList<>();
+    public static final ArrayList<String> productName = new ArrayList<>(new HashSet<>());
     public static ArrayList<Product> products = new ArrayList<>();
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -100,9 +104,11 @@ public class FilterFragment extends Fragment {
         EditText minPrice = v.findViewById(R.id.filterLowest);
         EditText maxPrice = v.findViewById(R.id.filterHighest);
         CheckBox checkNew = v.findViewById(R.id.checkNew);
+        CheckBox checkUsed = v.findViewById(R.id.checkUsed);
         Spinner category = v.findViewById(R.id.spinner);
         Button filter = v.findViewById(R.id.apply);
         Button clear = v.findViewById(R.id.clear);
+
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +123,7 @@ public class FilterFragment extends Fragment {
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                productName.clear();
                 boolean used = !checkNew.isChecked();
                 System.out.println(used);
                 Response.Listener<String> listener = new Response.Listener<String>() {
