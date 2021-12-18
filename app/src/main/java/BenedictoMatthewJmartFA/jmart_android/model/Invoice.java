@@ -2,6 +2,13 @@ package BenedictoMatthewJmartFA.jmart_android.model;
 
 import java.util.Date;
 
+/**
+ * Contains invoice details.
+ * Inherits Serializable
+ *
+ * @author Benedicto Matthew W
+ */
+
 public abstract class Invoice extends Serializable
 {
     public int buyerId;
@@ -9,7 +16,7 @@ public abstract class Invoice extends Serializable
     public Date date;
     public int productId;
     public Rating rating;
-//    public Status status;
+    public Status status;
 
     protected Invoice(int buyerId, int productId){
         this.rating = Rating.NONE;

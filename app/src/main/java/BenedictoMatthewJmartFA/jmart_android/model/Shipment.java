@@ -4,9 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Contains shipment details.
+ *
+ * @author Benedicto Matthew W
+ */
+
 public class Shipment
 {
-
     public String address;
     public int cost;
     public byte plan;

@@ -94,6 +94,12 @@ public class FilterFragment extends Fragment {
         }
     }
 
+    /**Allows user to search products based on params set by user
+     * Filters products by using RequestFactory
+     *
+     * @author Benedicto Matthew W
+     */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -109,6 +115,10 @@ public class FilterFragment extends Fragment {
         Button filter = v.findViewById(R.id.apply);
         Button clear = v.findViewById(R.id.clear);
 
+        /** Clears fields on clear button click
+         *
+         */
+
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,6 +129,10 @@ public class FilterFragment extends Fragment {
             }
         });
         category.setAdapter(new ArrayAdapter<ProductCategory>(getContext(), android.R.layout.simple_spinner_dropdown_item, ProductCategory.values()));
+
+        /** Filters products on filter button click
+         *
+         */
 
         filter.setOnClickListener(new View.OnClickListener() {
             @Override

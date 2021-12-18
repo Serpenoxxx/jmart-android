@@ -20,6 +20,13 @@ import BenedictoMatthewJmartFA.jmart_android.model.Payment;
 import BenedictoMatthewJmartFA.jmart_android.request.AcceptRequest;
 import BenedictoMatthewJmartFA.jmart_android.request.CancelRequest;
 
+/** Shows address and product count.
+ * Allows user to accept or cancel.
+ * Inherits AppCombatActivity
+ *
+ * @author Benedicto Matthew W
+ */
+
 public class ConfirmationActivity extends AppCompatActivity {
 
     @Override
@@ -36,6 +43,11 @@ public class ConfirmationActivity extends AppCompatActivity {
 
         Button AcceptConfirmation = findViewById(R.id.AcceptConfirmation);
         Button CancelConfirmation = findViewById(R.id.CancelConfirmation);
+
+        /** Sends AcceptRequest and redirects to main menu on click.
+         * Shows error toast on error
+         *
+         */
 
         AcceptConfirmation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +73,10 @@ public class ConfirmationActivity extends AppCompatActivity {
                 requestQueue.add(accReq);
             }
         });
+
+        /** Sends CancelRequest on cancel button click
+         *
+         */
 
         CancelConfirmation.setOnClickListener(new View.OnClickListener() {
             @Override

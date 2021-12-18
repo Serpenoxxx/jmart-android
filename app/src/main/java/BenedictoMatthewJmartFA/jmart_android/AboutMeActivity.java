@@ -25,6 +25,12 @@ import BenedictoMatthewJmartFA.jmart_android.model.Account;
 import BenedictoMatthewJmartFA.jmart_android.request.CreateStoreRequest;
 import BenedictoMatthewJmartFA.jmart_android.request.TopUpRequest;
 
+/** Shows account and store details
+ * Inherits AppCombatActivity
+ *
+ * @author Benedicto Matthew W
+ */
+
 public class AboutMeActivity extends AppCompatActivity {
 
     @Override
@@ -63,6 +69,10 @@ public class AboutMeActivity extends AppCompatActivity {
             storePhoneNumber.setText(LoginActivity.loggedAccount().store.phoneNumber);
         }
 
+        /** Sends topUpRequest if topUp button is pressed
+         *
+         */
+
         topUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +94,10 @@ public class AboutMeActivity extends AppCompatActivity {
             }
         });
 
+        /** Closes store register card if cancel button is clicked
+         *
+         */
+
         cancelButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -91,6 +105,10 @@ public class AboutMeActivity extends AppCompatActivity {
                 registerCard.setVisibility(View.GONE);
             }
         });
+
+        /** Sends registerStoreRequest and passes edit text as params
+         *
+         */
         registerStoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,6 +159,10 @@ public class AboutMeActivity extends AppCompatActivity {
                 });
             }
         });
+
+        /** Redirects to invoice page if invoice button is clicked
+         *
+         */
 
         InvoiceButton.setOnClickListener(new View.OnClickListener() {
             @Override

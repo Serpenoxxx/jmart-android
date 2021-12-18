@@ -39,6 +39,20 @@ public class RequestFactory
         return new StringRequest(Request.Method.GET, url, listener, errorListener);
     }
 
+    /** Requests products according to sent params.
+     *
+     * @param  page represents page
+     * @param  pageSize represents number of products shown in a single page
+     * @param  id represents the id
+     * @param  search represents the name of searched item
+     * @param  minPrice represents the minimum price of products
+     * @param  maxPrice represents the maximum price of products
+     * @param  category represents the category of products
+     * @param  conditionUsed represents the condition of products
+     * @param listener listens to responses
+     * @param errorListener listens to error responses
+     */
+
     public static StringRequest getProduct(
             int page,
             int pageSize,

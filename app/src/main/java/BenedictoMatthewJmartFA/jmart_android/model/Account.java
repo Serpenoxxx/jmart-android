@@ -2,6 +2,7 @@ package BenedictoMatthewJmartFA.jmart_android.model;
 
 /**
  * Contains account details.
+ * Inherits Serializable.
  *
  * @author Benedicto Matthew W
  */

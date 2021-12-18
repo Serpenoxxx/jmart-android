@@ -30,6 +30,9 @@ import java.util.ArrayList;
 import BenedictoMatthewJmartFA.jmart_android.model.Payment;
 import BenedictoMatthewJmartFA.jmart_android.request.RequestFactory;
 
+/** Shows invoices of previous transactions according to account id
+ *
+ */
 
 public class InvoiceActivity extends AppCompatActivity {
     private static final Gson gson = new Gson();

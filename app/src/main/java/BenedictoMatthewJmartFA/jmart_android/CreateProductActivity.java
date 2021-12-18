@@ -24,6 +24,11 @@ import org.json.JSONObject;
 import BenedictoMatthewJmartFA.jmart_android.request.CreateProductRequest;
 import BenedictoMatthewJmartFA.jmart_android.model.ProductCategory;
 
+/** Allows user to create product based on the params set by user.
+ *
+ * @author Benedicto Matthew W
+ */
+
 public class CreateProductActivity extends AppCompatActivity {
 
     private ProductCategory category;
@@ -52,6 +57,10 @@ public class CreateProductActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        /** Sends CreateProductRequest on create button click
+         * Shows toast on error
+         */
 
         productCreate.setOnClickListener(new View.OnClickListener() {
             @Override

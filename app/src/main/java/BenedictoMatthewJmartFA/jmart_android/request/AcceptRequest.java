@@ -18,6 +18,13 @@ public class AcceptRequest extends StringRequest {
     private static final String URL = "http://10.0.2.2:8090/payment/%d/accept";
     private static Map<String, String> params = new HashMap<>();
 
+    /** Requests acceptation to backend.
+     *
+     * @param  id represents id
+     * @param  listener listens to responses
+     * @param  errorListener listens to error responses
+     */
+
     public AcceptRequest(int id, Response.Listener<String> listener,
                          Response.ErrorListener errorListener){
         super(Request.Method.POST, String.format(URL, id), listener, errorListener);

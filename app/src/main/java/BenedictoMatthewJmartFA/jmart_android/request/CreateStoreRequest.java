@@ -24,7 +24,7 @@ public class CreateStoreRequest extends StringRequest {
      *
      * @param  name represents the store's name.
      * @param  address represents the store's address.
-     * @param  phoneNumber represenets the store's phone number.
+     * @param  phoneNumber represents the store's phone number.
      * @param  listener listens to responses.
      * @param  errorListener listens to error responses.
      */

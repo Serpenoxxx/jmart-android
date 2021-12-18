@@ -4,6 +4,7 @@ import static BenedictoMatthewJmartFA.jmart_android.LoginActivity.loggedAccount;
 
 /**
  * Contains product details.
+ * Inherits Serializable
  *
  * @author Benedicto Matthew W
  */

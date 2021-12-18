@@ -88,6 +88,10 @@ public class ProductsFragment extends Fragment {
 
     }
 
+    /**Shows products on listview
+     *
+     */
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

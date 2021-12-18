@@ -16,13 +16,18 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import BenedictoMatthewJmartFA.jmart_android.model.Account;
 import BenedictoMatthewJmartFA.jmart_android.request.LoginRequest;
+
+/**Logs a user in if credentials match
+ * inherits AppcombatActivity
+ *
+ */
 
 public class LoginActivity extends AppCompatActivity {
     private static final Gson gson = new Gson();
@@ -40,6 +45,11 @@ public class LoginActivity extends AppCompatActivity {
     // variable for shared preferences.
     SharedPreferences sharedpreferences;
     String emailsession, passwordsession;
+
+    /**Checks login session on app start
+     * Redirects to main menu if logged in
+     *
+     */
 
     @Override
     protected void onStart() {
@@ -86,6 +96,10 @@ public class LoginActivity extends AppCompatActivity {
         emailsession = sharedpreferences.getString(EMAIL_KEY, null);
         passwordsession = sharedpreferences.getString(PASSWORD_KEY, null);
 
+        /**Redirects to register page on register button click
+         *
+         */
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +107,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /** Sends login request
+         * Edits shared preferences on successful login
+         */
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

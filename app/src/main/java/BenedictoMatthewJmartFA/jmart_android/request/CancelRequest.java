@@ -17,6 +17,14 @@ import java.util.Map;
 public class CancelRequest extends StringRequest {
     private static final String URL = "http://10.0.2.2:8090/payment/%d/cancel";
     private static Map<String, String> params = new HashMap<>();
+
+    /** Requests cancellation to backend
+     *
+     * @param  id represents id
+     * @param  listener listens to responses
+     * @param errorListener listens to error responses
+     */
+
     public CancelRequest(int id, Response.Listener<String> listener,
                          Response.ErrorListener errorListener){
         super(Request.Method.POST, String.format(URL, id), listener, errorListener);

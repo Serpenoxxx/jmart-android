@@ -16,6 +16,11 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 import BenedictoMatthewJmartFA.jmart_android.model.Account;
 
+/**Shows main menu
+ * Inherits AppCombatActivity
+ *
+ */
+
 public class MainActivity extends AppCompatActivity {
     // creating constant keys for shared preferences.
     public static final String SHARED_PREFS = "shared_prefs";

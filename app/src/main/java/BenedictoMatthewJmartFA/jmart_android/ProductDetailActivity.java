@@ -29,6 +29,11 @@ import BenedictoMatthewJmartFA.jmart_android.model.Payment;
 import BenedictoMatthewJmartFA.jmart_android.model.Product;
 import BenedictoMatthewJmartFA.jmart_android.request.PaymentCreateRequest;
 
+/** Shows details according to clicked item
+ * Inherits AppCombatActivity
+ *
+ */
+
 public class ProductDetailActivity extends AppCompatActivity {
     private static final Gson gson = new Gson();
     private static Payment paymentDetail = null;
@@ -81,6 +86,10 @@ public class ProductDetailActivity extends AppCompatActivity {
         PDPriceEdit.setText(pr.get(4));
         PDDiscountEdit.setText(pr.get(5));
         PDWeightEdit.setText(pr.get(6));
+
+        /** Sends payment request on buy button click
+         *
+         */
 
         CreatePayButton.setOnClickListener(new View.OnClickListener() {
             @Override

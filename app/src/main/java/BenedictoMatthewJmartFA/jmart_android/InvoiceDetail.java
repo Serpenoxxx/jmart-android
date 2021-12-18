@@ -26,6 +26,12 @@ import java.util.ArrayList;
 import BenedictoMatthewJmartFA.jmart_android.model.Payment;
 import BenedictoMatthewJmartFA.jmart_android.request.SubmitRequest;
 
+/** Shows product sent address and time of transaction
+ * Inherits AppCombatActivity
+ *
+ * @author Benedicto Matthew W
+ */
+
 public class InvoiceDetail extends AppCompatActivity {
 
     @Override
@@ -55,6 +61,11 @@ public class InvoiceDetail extends AppCompatActivity {
 
         EditText receipt = findViewById(R.id.Receipt);
         Button SubmitButton = findViewById(R.id.SubmitButton);
+
+        /**Submits receipt on submit button click
+         *
+         */
+
         SubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

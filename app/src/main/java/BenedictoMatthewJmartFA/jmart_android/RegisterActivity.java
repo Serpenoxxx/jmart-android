@@ -19,6 +19,10 @@ import org.json.JSONObject;
 
 import BenedictoMatthewJmartFA.jmart_android.request.RegisterRequest;
 
+/**Allows user to register account
+ * Inherits AppCombatActivity
+ *
+ */
 
 public class RegisterActivity extends AppCompatActivity {
         @Override
@@ -29,6 +33,11 @@ public class RegisterActivity extends AppCompatActivity {
             EditText password = findViewById(R.id.passwordreg);
             EditText name = findViewById(R.id.namereg);
             Button button = findViewById(R.id.register);
+
+            /** Sends register request on register button click
+             *
+             */
+
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
